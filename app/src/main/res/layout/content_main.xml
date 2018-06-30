@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:id="@+id/cvWelcome"
+        android:layout_margin="16dp"
+        android:padding="4dp"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="7dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/rlWelcome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="4dp"
+                    android:id="@+id/tvWelcome"
+                    android:textAlignment="center"
+                    android:textSize="24sp"
+                    android:textStyle="bold|italic"
+                    android:text="Welcome to the Quiz App!"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvWelcome"
+                    android:layout_marginTop="4dp"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/tvDesc"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="italic"
+                    android:padding="4dp"
+                    android:text="Click the button below to begin."/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvDesc"
+                    android:layout_marginTop="4dp"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/btnBegin"
+                    android:padding="8dp"
+                    android:background="#00000000"
+                    android:text="Begin Quiz"
+                    android:textColor="@android:color/holo_blue_dark"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlQuestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/questionLayout">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:id="@+id/tvQuestion"
+                        android:textAlignment="center"
+                        android:textSize="24sp"
+                        android:textStyle="bold|italic"/>
+
+                    <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="4dp"-->
+                    <!--android:id="@+id/tvQuestion2"-->
+                    <!--android:textAlignment="center"-->
+                    <!--android:textSize="24sp"-->
+                    <!--android:textStyle="bold|italic"-->
+                    <!--android:text="Question Two"-->
+                    <!--android:visibility="gone"/>-->
+
+                    <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="4dp"-->
+                    <!--android:id="@+id/tvQuestion3"-->
+                    <!--android:textAlignment="center"-->
+                    <!--android:textSize="24sp"-->
+                    <!--android:textStyle="bold|italic"-->
+                    <!--android:text="Question Three"-->
+                    <!--android:visibility="gone"/>-->
+
+                    <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="4dp"-->
+                    <!--android:id="@+id/tvQuestion4"-->
+                    <!--android:textAlignment="center"-->
+                    <!--android:textSize="24sp"-->
+                    <!--android:textStyle="bold|italic"-->
+                    <!--android:text="Question Four"-->
+                    <!--android:visibility="gone"/>-->
+                </LinearLayout>
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/choices"
+                    android:layout_below="@id/questionLayout">
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/choiceA"
+                        />
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/choiceB"
+                        />
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/choiceC"
+                        />
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/choiceD"
+                        />
+                </RadioGroup>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/choices"
+                    android:layout_marginTop="4dp"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/btnSubmit"
+                    android:padding="8dp"
+                    android:background="#00000000"
+                    android:text="Submit"
+                    android:textColor="@android:color/holo_blue_dark"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="4dp"
+                    android:id="@+id/tvResultHead"
+                    android:textAllCaps="true"
+                    android:textStyle="bold|italic"
+                    android:textSize="24sp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvResultBody"
+                    android:layout_below="@id/tvResultHead"
+                    android:layout_margin="4dp"
+                    android:textStyle="bold|italic"
+                    android:textSize="16sp"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentRight="true"
+                    android:id="@+id/btnQuit"
+                    android:padding="8dp"
+                    android:background="#00000000"
+                    android:text="Quit"
+                    android:textColor="@android:color/holo_blue_dark"/>
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/ivCorrect"
+                android:layout_width="128dp"
+                android:layout_height="128dp"
+                android:layout_margin="16dp"
+                android:layout_centerInParent="true"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_correct"/>
+
+            <ImageView
+                android:id="@+id/ivWrong"
+                android:layout_width="128dp"
+                android:layout_height="128dp"
+                android:layout_margin="16dp"
+                android:layout_centerInParent="true"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_wrong"/>
+        </RelativeLayout>
+
+
+
+
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>
